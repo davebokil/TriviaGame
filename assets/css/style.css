@@ -1,0 +1,25 @@
+body {
+    background-image: url('../images/earth.jpg');
+    background-size: 1600px;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+p {
+    font-size: 30px;
+    color: white;
+}
+
+.pageheader {
+    color: #90bad3;
+    font-family: 'Abril Fatface', cursive;
+}
+
+
+.buttonstyle {
+	font-family: 'Abril Fatface', cursive;
+	background-color: #90bad3;
+	color: white;
+}
