@@ -1,14 +1,15 @@
 body {
     background-image: url('../images/earth.jpg');
-    background-size: 1600px;
+    background-size: 1500px;
 }
+
 
 h1 {
     font-size: 100px;
 }
 
 p {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
 }
 
@@ -21,5 +22,40 @@ p {
 .buttonstyle {
 	font-family: 'Abril Fatface', cursive;
 	background-color: #90bad3;
-	color: white;
+	color: black;
+	border-style: none;
 }
+
+.modal-body {
+	font-family: 'Abril Fatface', cursive;
+    padding:9px 15px;
+    background-color: #90bad3;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+}
+
+.modal-dialog {
+	width: 500px;
+	margin-top: 200px;
+
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.open .dropdown-toggle.btn-primary {
+    background: #90bad3;
+    border-style: none;
+}
+
