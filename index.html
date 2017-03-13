@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>COSMOS TRIVIA</title>
+    <title>pale blue dot</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,31 +14,26 @@
 
 <body>
     <div class="container">
-        <div class="pageheader">
-            <h1>pale blue dot.</h1>
-            <p>a trivia game about our home planet.</p>
-        </div>
-        <div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="startScreen">
-                <button type="button" class="btn btn-info btn-lg buttonstyle">Start</button>
-                <!-- Trigger the modal with a button -->
-                &nbsp
-                <button type="button" class="btn btn-info btn-lg buttonstyle" data-toggle="modal" data-target="#myModal">Instructions</button>
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <p style="color:black;">Press START to begin the game.
-                                    <br>
-                                    <br>Try to answer all 10 questions in under 60 seconds!</p>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-sm-7 pageheader">
+                <h1>pale blue dot.</h1>
+                <p id="subHeader">a trivia game about our home planet.</p>
             </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 startScreen">
+                <p id="instructions">Try to answer ten questions correctly
+                    <br>in sixty seconds or less.</p>
+                <button type="button" class="btn btn-info btn-lg buttonstyle startbutton">Get Started!</button>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 questionPanel">question 1 aosidfnaoisdnfioasndiofnasiodnfioa</div>
+            <div class="col-sm-6"></div>
         </div>
     </div>
     <!-- jQuery Link -->
