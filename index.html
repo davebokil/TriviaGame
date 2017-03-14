@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -24,16 +24,28 @@
         <br>
         <br>
         <div class="row">
-            <div class="col-sm-6 startScreen">
+            <div class="col-sm-12 startScreen">
                 <p id="instructions">Try to answer ten questions correctly
                     <br>in sixty seconds or less.</p>
                 <button type="button" class="btn btn-info btn-lg buttonstyle startbutton">Get Started!</button>
             </div>
+        </div>
+        <div class="row theTimer">
+            <div class="col-sm-6">
+                <p>Time Left:&nbsp<span id="show-number"></span></p>
+            </div>
             <div class="col-sm-6"></div>
         </div>
+        <br>
         <div class="row">
-            <div class="col-sm-6 questionPanel">question 1 aosidfnaoisdnfioasndiofnasiodnfioa</div>
-            <div class="col-sm-6"></div>
+            <div class="col-sm-9 questionColumn">
+                <p>Question&nbsp<span id="question-number"></span>:</p>
+                <p><span id="question-text"></span></p>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonA">A.&nbsp<span id="response-a"></span></button>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonB">B.&nbsp<span id="response-b"></span></button>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonC">C.&nbsp<span id="response-c"></span></button>
+            </div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
     <!-- jQuery Link -->

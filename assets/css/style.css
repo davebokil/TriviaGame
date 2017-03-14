@@ -28,6 +28,7 @@ p {
 	background-color: #90bad3;
 	color: black;
 	border-style: none;
+    margin-bottom: 4px;
 }
 
 .btn:hover,
@@ -39,7 +40,7 @@ p {
     border-style: none;
 }
 
-.questionPanel {
+/*.questionPanel {
     background-color: #90bad3;
     margin-left: 15px;
-}
+}*/
