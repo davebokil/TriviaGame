@@ -15,7 +15,7 @@
 $(document).ready(function() {
 
     // Variables
-    // -----------------------------------------------------------------
+    // -------------------------------------------------------------
 
     // Stop Clock 
     var counter = 61;
@@ -23,14 +23,14 @@ $(document).ready(function() {
     var intervalId;
     // Used to display the question number
     var questionNumber = 0
-    // Stores number of correctly answered questions
+        // Stores number of correctly answered questions
     var questionCorrect = 0
-    // Stores number of incorrectly answered questions
+        // Stores number of incorrectly answered questions
     var questionWrong = 0
-    // user's response collected in an array
+        // user's response collected in an array
     var responseArray = []
-    // Correct Answer Array
-    var answerArray = ["Pacific Ocean","center of the earth","Australia","Sahara","nitrogen","20%","USA","Wrangell-St. Elias","Australia","January"]
+        // Correct Answer Array
+    var answerArray = ["Pacific Ocean", "center of the earth", "Australia", "Sahara", "nitrogen", "20%", "USA", "Wrangell-St. Elias", "Australia", "January"]
     console.log(answerArray)
 
     // Elements will fade into the page upon load
@@ -47,11 +47,6 @@ $(document).ready(function() {
     $("#instructions").delay(3500).fadeIn(1000);
     $(".startbutton").delay(3700).fadeIn(1000);
 
-    // Cue Carl Sagan
-    var audio = new Audio('assets/music/sagan.mp3');
-    audio.play();
-    audio.volume = 0.2;
-
     // Clicking the start button hides the welcome screen and starts game
     $(".startbutton").on("click", function() {
         $(".theTimer").show();
@@ -62,10 +57,12 @@ $(document).ready(function() {
         startGame()
     })
 
-    // game initiate
+    // Start the Game
+    // -------------------------------------------------------------
     function startGame() {
         // start the clock when user begins game
         intervalId = setInterval(decrement, 1000);
+
         function decrement() {
             counter--;
             $("#show-number").html(counter)
@@ -74,9 +71,9 @@ $(document).ready(function() {
                 //...run the tally function.
                 // tally();
                 console.log("hit zero")
-                // run the function that tallys answers and displays score
-                tally()    
-            }      
+                    // run the function that tallys answers and displays score
+                tally()
+            }
         }
 
         // show the question div
@@ -86,11 +83,18 @@ $(document).ready(function() {
         var questionNumber = 0
         var questionCorrect = 0
         var questionWrong = 0
-        
+
+        //if the user finishes the quiz before 60 seconds and wants to skip to the tally
+        $(".finish").on("click", function() {
+            tally()
+        })
+
 
     // startGame Wrap    
     }
 
+    // Function to tally up the score
+    // -------------------------------------------------------------
     function tally() {
         // store user input in variables
         var AOne = $('input:radio[name="question1"]:checked').val();
@@ -107,17 +111,16 @@ $(document).ready(function() {
         responseArray.push(AOne, ATwo, AThree, AFour, AFive, ASix, ASeven, AEight, ANine, ATen)
         console.log(responseArray)
 
-        // compare the arrays
+        // compare the user and correct answer arrays
         for (i = 0; i < answerArray.length; i++) {
             if (responseArray[i] === answerArray[i]) {
                 questionCorrect++
-            }
-            else {
+            } else {
                 questionWrong++
             }
         }
 
-        // Hide the Question Div and show the Finish Page
+        // Hide the Question Div and show the Finish Page div
         console.log(questionWrong)
         console.log(questionCorrect)
         $(".questionColumn").hide();
@@ -126,8 +129,9 @@ $(document).ready(function() {
         // Display Correct and Incorrect Responses
         $("#rightResponses").html(questionCorrect)
         $("#wrongResponses").html(questionWrong)
+
     // tally Wrap      
     }
 
-// jQeury Wrap 
+    // jQeury Wrap 
 });

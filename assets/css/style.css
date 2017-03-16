@@ -1,6 +1,6 @@
 body {
     background-image: url('../images/earth.jpg');
-    background-size: 1500px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-color: black;
 }
@@ -16,7 +16,9 @@ h1 {
 p {
     font-size: 25px;
     color: white;
-    font-family: 'Abril Fatface', cursive;
+    /*font-family: 'Abril Fatface', cursive;*/
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .pageheader {
@@ -26,7 +28,8 @@ p {
 
 
 .buttonstyle {
-	font-family: 'Abril Fatface', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
+	/*font-family: 'Abril Fatface', cursive;*/
 	background-color: #90bad3;
 	color: black;
 	border-style: none;
@@ -45,6 +48,20 @@ p {
 .questionColumn {
     background-color: #90bad3;
     margin-left: 15px;
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: 'Abril Fatface', cursive;*/
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.FinishScreen {
+    background-color: #90bad3;
+    margin-left: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: 'Abril Fatface', cursive;*/
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
 }
 
