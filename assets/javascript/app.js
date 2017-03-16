@@ -117,13 +117,13 @@ $(document).ready(function() {
             }
         }
 
-
         // Hide the Question Div and show the Finish Page
         console.log(questionWrong)
         console.log(questionCorrect)
         $(".questionColumn").hide();
         $(".theTimer").hide();
         $(".FinishScreen").show();
+        // Display Correct and Incorrect Responses
         $("#rightResponses").html(questionCorrect)
         $("#wrongResponses").html(questionWrong)
     // tally Wrap      
