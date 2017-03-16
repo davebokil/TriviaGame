@@ -39,11 +39,69 @@
         <br>
         <div class="row">
             <div class="col-sm-9 questionColumn">
-                <p>Question&nbsp<span id="question-number"></span>:</p>
+<!--                 <p>Question&nbsp<span id="question-number"></span>:</p>
                 <p><span id="question-text"></span></p>
-                <button type="button" class="btn btn-info btn-lg buttonstyle buttonA">A.&nbsp<span id="response-a"></span></button>
-                <button type="button" class="btn btn-info btn-lg buttonstyle buttonB">B.&nbsp<span id="response-b"></span></button>
-                <button type="button" class="btn btn-info btn-lg buttonstyle buttonC">C.&nbsp<span id="response-c"></span></button>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonA">A.&nbsp<span class="response" id="response-a"></span></button>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonB">B.&nbsp<span class="response" id="response-b"></span></button>
+                <button type="button" class="btn btn-info btn-lg buttonstyle buttonC" value="<span class="response" id="response-c"></span>">C.&nbsp</button> -->
+                <form>
+                <p>Question 1: What is the name of the largest ocean on earth?</p>
+                  <input type="radio" name="question1" value="Pacific Ocean"> Pacific Ocean<br>
+                  <input type="radio" name="question1" value="Atlantic Ocean"> Atlantic Ocean<br>
+                  <input type="radio" name="question1" value="Indian Ocean"> Indian Ocean<br>
+                <br>
+                <p>Question 2: Which is hotter, the center of the earth or surface of the sun?</p>
+                  <input type="radio" name="question2" value="center of the earth"> center of the earth<br>
+                  <input type="radio" name="question2" value="surface of the sun"> surface of the sun<br>
+                  <input type="radio" name="question2" value="both are the same temperature"> both are the same temperature<br>
+                <br>
+                <p>Question 3: The Great Barrier Reef is found off the coast of which country?</p>
+                  <input type="radio" name="question3" value="New Zealand"> New Zealand<br>
+                  <input type="radio" name="question3" value="Australia"> Australia<br>
+                  <input type="radio" name="question3" value="Japan"> Japan<br>
+                <br>
+                <p>Question 4: What is the largest Subtropical desert?</p>
+                  <input type="radio" name="question4" value="Arabian"> Arabian<br>
+                  <input type="radio" name="question4" value="Kalahari"> Kalahari<br>
+                  <input type="radio" name="question4" value="Sahara"> Sahara<br>
+                <br>
+                <p>Question 5: What is the most common gas found in the air?</p>
+                  <input type="radio" name="question5" value="nitrogen"> nitrogen<br>
+                  <input type="radio" name="question5" value="oxygen"> oxygen<br>
+                  <input type="radio" name="question5" value="helium"> helium<br>
+                <br>
+                <p>Question 6: Oxygen forms approximately what proportion of the atmosphere?</p>
+                  <input type="radio" name="question6" value="10%"> 10%<br>
+                  <input type="radio" name="question6" value="20%"> 20%<br>
+                  <input type="radio" name="question6" value="30%"> 30%<br>
+                <br>
+                <p>Question 7: Which country produces the world's largest quantity of municipal waste per person per year?</p>
+                  <input type="radio" name="question7" value="India"> India<br>
+                  <input type="radio" name="question7" value="China"> China<br>
+                  <input type="radio" name="question7" value="USA"> USA<br>
+                <br>
+                <p>Question 8: Which is the largest national park in the US?</p>
+                  <input type="radio" name="question8" value="Wrangell-St. Elias"> Wrangell-St. Elias<br>
+                  <input type="radio" name="question8" value="Denali"> Denali<br>
+                  <input type="radio" name="question8" value="Glacier Bay"> Glacier Bay<br>
+                <br>
+                <p>Question 9: What is the world's smallest continent?</p>
+                  <input type="radio" name="question9" value="Antartica"> Antartica<br>
+                  <input type="radio" name="question9" value="Australia"> Australia<br>
+                  <input type="radio" name="question9" value="Europe"> Europe<br>
+                <br>
+                <p>Question 10: In what month is the Earth closest to the Sun?</p>
+                  <input type="radio" name="question10" value="December"> December<br>
+                  <input type="radio" name="question10" value="May"> May<br>
+                  <input type="radio" name="question10" value="January"> January<br>                
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row FinishScreen">
+            <div class="col-sm-9">
+                <p>Correct Responses:&nbsp<span id="rightResponses"></span></p><br>
+                <p>Incorrect Responses:&nbsp<span id="wrongResponses"></span></p>
             </div>
             <div class="col-sm-3"></div>
         </div>

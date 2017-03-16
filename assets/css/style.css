@@ -1,6 +1,8 @@
 body {
     background-image: url('../images/earth.jpg');
     background-size: 1500px;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 .container {
@@ -40,7 +42,9 @@ p {
     border-style: none;
 }
 
-/*.questionPanel {
+.questionColumn {
     background-color: #90bad3;
     margin-left: 15px;
-}*/
+    font-family: 'Abril Fatface', cursive;
+}
+

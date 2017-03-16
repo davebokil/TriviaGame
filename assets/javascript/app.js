@@ -10,13 +10,13 @@
 // | $$                                                                                                          
 // |__/ 
 
-// Javascript function to wrap everything
+// Jquery function to wrap everything
 // -----------------------------------------------------------------
 $(document).ready(function() {
 
     // Variables
     // -----------------------------------------------------------------
-    
+
     // Stop Clock 
     var counter = 61;
     // used for stop clock interval
@@ -27,6 +27,11 @@ $(document).ready(function() {
     var questionCorrect = 0
     // Stores number of incorrectly answered questions
     var questionWrong = 0
+    // user's response collected in an array
+    var responseArray = []
+    // Correct Answer Array
+    var answerArray = ["Pacific Ocean","center of the earth","Australia","Sahara","nitrogen","20%","USA","Wrangell-St. Elias","Australia","January"]
+    console.log(answerArray)
 
     // Elements will fade into the page upon load
     $(".pageheader").hide();
@@ -36,99 +41,92 @@ $(document).ready(function() {
     $(".questionPanel").hide();
     $(".theTimer").hide();
     $(".questionColumn").hide();
+    $(".FinishScreen").hide();
     $(".pageheader").delay(1000).fadeIn(1000);
     $("#subHeader").delay(2500).fadeIn(1000);
     $("#instructions").delay(3500).fadeIn(1000);
     $(".startbutton").delay(3700).fadeIn(1000);
 
+    // Cue Carl Sagan
+    var audio = new Audio('assets/music/sagan.mp3');
+    audio.play();
+    audio.volume = 0.2;
 
     // Clicking the start button hides the welcome screen and starts game
     $(".startbutton").on("click", function() {
         $(".theTimer").show();
         $("#instructions").hide();
         $(".startbutton").hide();
+        $(".FinishScreen").hide();
         $(".questionPanel").delay(500).fadeIn(500);
         startGame()
     })
 
     // game initiate
     function startGame() {
-        
         // start the clock when user begins game
         intervalId = setInterval(decrement, 1000);
         function decrement() {
             counter--;
             $("#show-number").html(counter)
                 // when the timer hits zero...
-            if (counter === 0) {
+            if (counter === -1) {
                 //...run the tally function.
                 // tally();
                 console.log("hit zero")
-            }
-            
+                // run the function that tallys answers and displays score
+                tally()    
+            }      
         }
 
         // show the question div
         $(".questionColumn").fadeIn(500);
+
+        // Reset game parameters
+        var questionNumber = 0
+        var questionCorrect = 0
+        var questionWrong = 0
         
-        // proceed to question 1
-        questionOne()
+
     // startGame Wrap    
     }
 
-    // Question 1
-    function questionOne() {
-        questionNumber++;
-        $("#question-number").html(questionNumber);
-        $("#question-text").html("What is the name of the largest ocean on earth?");
-        $("#response-a").html("The Pacific Ocean");
-        $("#response-b").html("The Atlantic Ocean");
-        $("#response-c").html("The Indian Ocean");
+    function tally() {
+        // store user input in variables
+        var AOne = $('input:radio[name="question1"]:checked').val();
+        var ATwo = $('input:radio[name="question2"]:checked').val();
+        var AThree = $('input:radio[name="question3"]:checked').val();
+        var AFour = $('input:radio[name="question4"]:checked').val();
+        var AFive = $('input:radio[name="question5"]:checked').val();
+        var ASix = $('input:radio[name="question6"]:checked').val();
+        var ASeven = $('input:radio[name="question7"]:checked').val();
+        var AEight = $('input:radio[name="question8"]:checked').val();
+        var ANine = $('input:radio[name="question9"]:checked').val();
+        var ATen = $('input:radio[name="question10"]:checked').val();
+        // push the variables into an array
+        responseArray.push(AOne, ATwo, AThree, AFour, AFive, ASix, ASeven, AEight, ANine, ATen)
+        console.log(responseArray)
 
-        // if option a is clicked
-        $("#response-a").on("click", function() {
-            questionCorrect++
-            questionTwo()
-            // console.log("he got it right" + questionCorrect)
-        })
+        // compare the arrays
+        for (i = 0; i < answerArray.length; i++) {
+            if (responseArray[i] === answerArray[i]) {
+                questionCorrect++
+            }
+            else {
+                questionWrong++
+            }
+        }
 
-        // if option b is clicked
-        $("#response-b").on("click", function() {
-            questionWrong++
-            questionTwo()
-        })
 
-        // if option c is clicked
-        $("#response-c").on("click", function() {
-            questionWrong++
-            questionTwo()
-        })
-    console.log("tally wrong: "+questionWrong)
-    console.log("tally right: "+questionCorrect)    
-    }
-
-    // Question 2
-    function questionTwo() {
-        questionNumber++;
-        $("#question-number").html(questionNumber);
-        $("#question-text").html("Which is hotter, the center of the earth or surface of the sun?");
-        $("#response-a").html("surface of the sun");
-        $("#response-b").html("center of the earth");
-        $(".buttonC").hide();
-
-        // if option a is clicked
-        $("#response-a").on("click", function() {
-            questionWrong++
-            // questionThree()
-        })
-
-        // if option b is clicked
-        $("#response-b").on("click", function() {
-            questionCorrect++
-            // questionThree()
-        })
-    console.log("tally wrong: "+questionWrong)
-    console.log("tally right: "+questionCorrect)   
+        // Hide the Question Div and show the Finish Page
+        console.log(questionWrong)
+        console.log(questionCorrect)
+        $(".questionColumn").hide();
+        $(".theTimer").hide();
+        $(".FinishScreen").show();
+        $("#rightResponses").html(questionCorrect)
+        $("#wrongResponses").html(questionWrong)
+    // tally Wrap      
     }
 
 // jQeury Wrap 
